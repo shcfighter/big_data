@@ -20,8 +20,8 @@ public class JavaNginx {
         SparkConf conf = new SparkConf().setAppName("nginx");
         SparkContext sc = new SparkContext(conf);
         JavaRDD<String> accessRdd = sc.textFile("hdfs://localhost:9000/data/input/access.log", 1).toJavaRDD();
-        JavaPairRDD<String, Integer> accessPairRDD = accessRdd.filter(line -> {
-            String[] logs = parseLog(line);
+        JavaPairRDD<String, Integer> accessPairRDD = accessRdd.map(line -> parseLog(line))
+                .filter(logs -> {
             if(Objects.isNull(logs) || logs.length <= 0){
                 return false;
             }
@@ -32,8 +32,7 @@ public class JavaNginx {
                 return true;
             }
             return false;
-        }).map(line -> Stream.of(parseLog(line)).collect(Collectors.joining(" ")))
-                .mapToPair(line -> new Tuple2(line, 1));
+        }).mapToPair(line -> new Tuple2(Stream.of(line).collect(Collectors.joining(" ")), 1));
         accessPairRDD.saveAsTextFile("hdfs://localhost:9000/data/nginx");
     }
 

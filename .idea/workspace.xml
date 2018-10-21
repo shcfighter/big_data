@@ -6,7 +6,10 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f876398d-c277-41c4-9de0-f2bb99ec395e" name="Default" comment="" />
+    <list default="true" id="f876398d-c277-41c4-9de0-f2bb99ec395e" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spark_java/src/main/java/com/ecit/JavaNginx.java" beforeDir="false" afterPath="$PROJECT_DIR$/spark_java/src/main/java/com/ecit/JavaNginx.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/hadoop/target/" />
@@ -69,8 +72,8 @@
       <file leaf-file-name="JavaNginx.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/spark_java/src/main/java/com/ecit/JavaNginx.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="53" column="30" selection-start-line="53" selection-start-column="30" selection-end-line="53" selection-end-column="30" />
+            <state relative-caret-position="424">
+              <caret line="34" column="85" selection-start-line="34" selection-start-column="85" selection-end-line="34" selection-end-column="85" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -167,7 +170,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1346" />
@@ -402,12 +405,12 @@
       <workItem from="1539600785009" duration="50078000" />
       <workItem from="1539651014476" duration="12615000" />
       <workItem from="1539830893563" duration="8983000" />
-      <workItem from="1540109173842" duration="4817000" />
+      <workItem from="1540109173842" duration="7059000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87411000" />
+    <option name="totallyTimeSpent" value="89653000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -424,7 +427,7 @@
       <window_info anchor="right" id="Maven Projects" order="3" weight="0.32980332" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.330033" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.330033" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.3294893" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
@@ -735,8 +738,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/spark_java/src/main/java/com/ecit/JavaNginx.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="53" column="30" selection-start-line="53" selection-start-column="30" selection-end-line="53" selection-end-column="30" />
+        <state relative-caret-position="424">
+          <caret line="34" column="85" selection-start-line="34" selection-start-column="85" selection-end-line="34" selection-end-column="85" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
