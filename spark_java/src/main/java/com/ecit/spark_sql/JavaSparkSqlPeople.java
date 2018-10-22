@@ -25,9 +25,7 @@ public class JavaSparkSqlPeople {
 
         // 基于用字符串定义的schema生成StructType
         List<StructField> fields = new ArrayList<>();
-        for (
-                String fieldName : schemaString.split(" "))
-
+        for (String fieldName : schemaString.split(" "))
         {
             StructField field = DataTypes.createStructField(fieldName, DataTypes.StringType, true);
             fields.add(field);

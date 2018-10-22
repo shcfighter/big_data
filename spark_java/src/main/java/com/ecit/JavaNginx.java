@@ -5,8 +5,14 @@ import org.apache.spark.SparkContext;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.rdd.RDD;
+import org.lionsoul.ip2region.DataBlock;
+import org.lionsoul.ip2region.DbConfig;
+import org.lionsoul.ip2region.DbMakerConfigException;
+import org.lionsoul.ip2region.DbSearcher;
 import scala.Tuple2;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -58,6 +64,22 @@ public class JavaNginx {
             logs[4] = matcher.group(5);
             logs[5] = matcher.group(6);
             logs[6] = matcher.group(7);
+        }
+        if(Objects.nonNull(logs[0])){
+            DbSearcher searcher = null;
+            try {
+                searcher = new DbSearcher(new DbConfig(), "ip2region.db");
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (DbMakerConfigException e) {
+                e.printStackTrace();
+            }
+            try {
+                DataBlock data = searcher.btreeSearch(logs[0]);
+                logs[7] = data.getRegion();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
         return logs;
     }
