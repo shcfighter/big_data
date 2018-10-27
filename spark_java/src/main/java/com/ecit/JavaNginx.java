@@ -68,7 +68,7 @@ public class JavaNginx {
         if(Objects.nonNull(logs[0])){
             DbSearcher searcher = null;
             try {
-                searcher = new DbSearcher(new DbConfig(), JavaNginx.class.getClassLoader().getResource("ip2region.db").getPath());
+                searcher = new DbSearcher(new DbConfig(), "/root/big_data/spark_java/src/main/resourcesip2region.db");
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             } catch (DbMakerConfigException e) {
