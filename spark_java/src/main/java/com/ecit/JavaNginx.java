@@ -23,7 +23,7 @@ public class JavaNginx {
     public static String pattern = "^(\\d+\\.\\d+\\.\\d+\\.\\d+)\\s\\-\\s-\\s(\\[[^\\[\\]]+\\])\\s(\\\"(?:[^\"]|\\\")+|-\\\")\\s(\\d{3})\\s(\\d+|-)\\s(\\\"(?:[^\"]|\\\")+|-\\\")\\s(\\\"(?:[^\"]|\\\")+|-\\\")$";
     public static String pattern2 = "^(\\d+\\.\\d+\\.\\d+\\.\\d+)\\s(\\[[^\\[\\]]+\\])\\s(\\\"(?:[^\"]|\\\")+|-\\\")\\s(\\d{3})\\s(\\d+|-)\\s(\\\"(?:[^\"]|\\\")+|-\\\")\\s(\\\"(?:[^\"]|\\\")+|-\\\")\\s(\\\"-\\\")$";
     public static void main(String[] args) {
-        SparkConf conf = new SparkConf().setMaster("local").setAppName("nginx");
+        SparkConf conf = new SparkConf().set("spark.default.parallelism", "1").setMaster("local").setAppName("nginx");
         SparkContext sc = new SparkContext(conf);
         JavaRDD<String> accessRdd = sc.textFile("hdfs://localhost:9000/data/input/access.log", 1).toJavaRDD();
         JavaPairRDD<String, Integer> accessPairRDD = accessRdd.map(line -> parseLog(line))
