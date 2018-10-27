@@ -43,7 +43,7 @@ public class JavaNginx {
     }
 
     public static String[] parseLog(String log){
-        String[] logs = new String[7];
+        String[] logs = new String[8];
         if(Pattern.matches(pattern, log)){
             Matcher matcher = Pattern.compile(pattern).matcher(log);
             matcher.matches();
